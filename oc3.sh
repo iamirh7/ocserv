@@ -127,7 +127,7 @@ function InstallOcserv {
 
     # Install epel-release
     if [ $(grep epel /etc/yum.repos.d/*.repo | wc -l) -eq 0 ]; then
-          yum clean all && yum makecache fast
+        yum install -y -q epel-release && yum clean all && yum makecache fast
     fi
     # Install ocserv
     yum install -y ocserv
